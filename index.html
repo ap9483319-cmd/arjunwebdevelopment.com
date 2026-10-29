@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Arjun Web Development creates modern, mobile-friendly websites for businesses, hospitals, schools, shops and startups.">
+<meta name="theme-color" content="#080f20">
+<title>Arjun Web Development | Premium Websites</title>
+
+<style>
+:root {
+  --bg:#080f20;
+  --card:#111c32;
+  --blue:#3b82f6;
+  --cyan:#67e8f9;
+  --white:#f8fafc;
+  --muted:#a7b4ca;
+  --border:rgba(255,255,255,.12);
+}
+* {margin:0;padding:0;box-sizing:border-box}
+html {scroll-behavior:smooth;scroll-padding-top:85px}
+body {
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--white);
+  line-height:1.7;
+}
+a {color:inherit;text-decoration:none}
+.container {width:min(1120px,92%);margin:auto}
+section {padding:76px 0}
+h1,h2,h3 {line-height:1.2}
+p {color:var(--muted)}
+.btn {
+  display:inline-block;
+  background:linear-gradient(135deg,var(--blue),#6366f1);
+  padding:13px 21px;
+  border-radius:9px;
+  font-weight:bold;
+  margin:6px 5px 6px 0;
+  border:1px solid transparent;
+}
+.btn-outline {
+  background:transparent;
+  border-color:var(--border);
+}
+.btn:hover {opacity:.88}
+header {
+  position:sticky;top:0;z-index:10;
+  background:rgba(8,15,32,.96);
+  border-bottom:1px solid var(--border);
+}
+.nav {
+  min-height:72px;display:flex;
+  align-items:center;justify-content:space-between;
+  gap:15px;flex-wrap:wrap;padding:12px 0;
+}
+.brand {font-size:20px;font-weight:800}
+.brand span {color:var(--cyan)}
+nav {display:flex;gap:17px;flex-wrap:wrap}
+nav a {font-size:14px;color:var(--muted)}
+nav a:hover {color:var(--cyan)}
+.hero {
+  padding:85px 0;
+  background:radial-gradient(ellipse at top right,#173a70 0%,var(--bg) 60%);
+}
+.hero-grid {
+  display:grid;grid-template-columns:1.2fr .8fr;
+  gap:35px;align-items:center;
+}
+.tag {
+  color:var(--cyan);font-size:13px;
+  font-weight:bold;letter-spacing:2px;
+  text-transform:uppercase;
+}
+.hero h1 {font-size:clamp(36px,6vw,62px);margin:18px 0}
+.hero h1 span {
+  background:linear-gradient(90deg,var(--cyan),#818cf8);
+  color:transparent;background-clip:text;
+}
+.hero p {font-size:17px;max-width:590px}
+.hero-box {
+  padding:30px;border-radius:22px;
+  border:1px solid var(--border);
+  background:linear-gradient(145deg,#172b4d,#101729);
+  box-shadow:0 20px 60px #0005;
+}
+.hero-box .symbol {font-size:65px;text-align:center;margin-bottom:12px}
+.hero-box h3 {font-size:24px;text-align:center;margin-bottom:10px}
+.hero-box p {text-align:center;font-size:14px}
+.stats {
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:12px;margin-top:30px;
+}
+.stat {border-top:1px solid var(--border);padding-top:15px}
+.stat strong {display:block;color:var(--cyan);font-size:20px}
+.stat small {color:var(--muted)}
+.section-head {text-align:center;margin-bottom:38px}
+.section-head h2 {font-size:clamp(28px,4vw,40px);margin:12px 0}
+.section-head p {max-width:650px;margin:auto}
+.grid {
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.card {
+  background:var(--card);border:1px solid var(--border);
+  padding:25px;border-radius:16px;
+}
+.card .icon {font-size:30px;margin-bottom:12px}
+.card h3 {font-size:20px;margin-bottom:10px}
+.card p {font-size:14px}
+.card:hover {border-color:#4f8df7}
+.about-grid {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:35px;align-items:center;
+}
+.about-panel {
+  background:linear-gradient(145deg,#142b4c,#101729);
+  border:1px solid var(--border);
+  border-radius:20px;padding:30px;
+}
+.check-list {list-style:none;margin-top:20px}
+.check-list li {margin:10px 0;color:var(--muted)}
+.check-list li::first-letter {color:var(--cyan)}
+.project {overflow:hidden;padding:0}
+.project-top {
+  min-height:125px;display:grid;place-items:center;
+  background:linear-gradient(135deg,#173b70,#26345d);
+  font-size:38px;
+}
+.project-body {padding:20px}
+.project-body h3 {margin-bottom:8px}
+.pill {
+  display:inline-block;border:1px solid var(--border);
+  border-radius:30px;padding:4px 10px;
+  font-size:12px;color:var(--cyan);margin:5px 3px 0 0;
+}
+.price {font-size:30px;font-weight:800;color:var(--cyan);margin:15px 0}
+.price small {font-size:13px;color:var(--muted);font-weight:normal}
+.price-card ul {list-style:none;margin:18px 0}
+.price-card li {font-size:14px;color:var(--muted);padding:6px 0}
+.price-card li::before {content:"✓ ";color:var(--cyan)}
+.featured {border-color:var(--blue);box-shadow:0 0 28px #3b82f622}
+details {
+  background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:18px;margin:12px 0;
+}
+summary {font-weight:bold;cursor:pointer}
+details p {padding-top:12px;font-size:14px}
+.contact-grid {
+  display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;
+}
+.contact-box {
+  background:var(--card);border:1px solid var(--border);
+  border-radius:16px;padding:25px;
+}
+.contact-box p {margin:10px 0}
+label {display:block;margin:12px 0 5px;font-size:14px}
+input,textarea,select {
+  width:100%;padding:13px;border-radius:8px;
+  background:#080f20;border:1px solid var(--border);
+  color:white;font:inherit;
+}
+textarea {min-height:110px;resize:vertical}
+form button {cursor:pointer;color:white;font:inherit}
+footer {border-top:1px solid var(--border);padding:30px 0}
+.footer-row {
+  display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:15px
+}
+.wa-float {
+  position:fixed;right:16px;bottom:18px;z-index:20;
+  background:#16a34a;color:white;padding:12px 16px;
+  border-radius:40px;font-weight:bold;
+  box-shadow:0 5px 22px #0006;
+}
+@media(max-width:760px) {
+  .hero-grid,.about-grid,.contact-grid {grid-template-columns:1fr}
+  .grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero {padding:60px 0}
+  section {padding:55px 0}
+  nav {gap:12px}
+  .nav {justify-content:center}
+  .hero-box {padding:24px}
+}
+@media(max-width:460px) {
+  .grid {grid-template-columns:1fr}
+  nav {justify-content:center}
+  .brand {width:100%;text-align:center}
+  .stats {gap:8px}
+  .stat strong {font-size:17px}
+  .btn {padding:12px 15px;font-size:14px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">ARJUN <span>WEB DEV.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag">Digital Solutions For Your Business</span>
+      <h1>We Build <span>Premium Websites</span> That Grow Your Business</h1>
+      <p>
+        Modern, professional and mobile-friendly websites
+        for businesses, hospitals, schools, shops and startups.
+        Give your business a powerful online presence.
+      </p>
+      <div style="margin-top:22px">
+        <a class="btn" href="#contact">Get a Free Consultation ↗</a>
+        <a class="btn btn-outline" href="#portfolio">View Our Work</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>Mobile</strong><small>Friendly Design</small></div>
+        <div class="stat"><strong>Modern</strong><small>Website Style</small></div>
+        <div class="stat"><strong>Support</strong><small>Client Focused</small></div>
+      </div>
+    </div>
+    <div class="hero-box">
+      <div class="symbol">💻</div>
+      <h3>Your Business, Online</h3>
+      <p>Beautiful design. Clear information. Easy customer contact.</p>
+      <hr style="border:0;border-top:1px solid var(--border);margin:24px 0">
+      <div class="grid" style="grid-template-columns:1fr 1fr">
+        <div><span class="tag">DESIGN</span><p>Clean & Modern</p></div>
+        <div><span class="tag">LAYOUT</span><p>Mobile Ready</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div>
+      <span class="tag">About Our Business</span>
+      <h2 style="font-size:clamp(28px,4vw,40px);margin:15px 0">
+        Helping Your Business Stand Out Online
+      </h2>
+      <p>
+        Arjun Web Development helps businesses present their
+        services professionally online. We focus on clear layouts,
+        attractive designs and convenient customer communication.
+      </p>
+      <ul class="check-list">
+        <li>✓ Responsive layouts for mobile and desktop</li>
+        <li>✓ Professional service and pricing sections</li>
+        <li>✓ WhatsApp contact integration</li>
+        <li>✓ Portfolio and business information pages</li>
+      </ul>
+      <a class="btn" href="#services">Explore Services</a>
+    </div>
+    <div class="about-panel">
+      <div class="symbol" style="font-size:45px">🚀</div>
+      <h3 style="font-size:24px;margin-bottom:12px">Our Mission</h3>
+      <p>To help businesses build a professional online identity with practical, attractive and easy-to-use websites.</p>
+      <hr style="border:0;border-top:1px solid var(--border);margin:22px 0">
+      <h3>Our Approach</h3>
+      <p>Understand your needs, plan the design, build the pages and test the website before launch.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:#0b1426">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">What We Offer</span>
+      <h2>Our Web Development Services</h2>
+      <p>Website solutions tailored to your business goals and customers.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">🌐</div>
+        <h3>Business Websites</h3>
+        <p>Present your company, services, business details and contact information.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🏥</div>
+        <h3>Hospital Websites</h3>
+        <p>Display departments, doctor profiles, facilities and appointment contacts.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🎓</div>
+        <h3>School Websites</h3>
+        <p>Show school information, courses, facilities, notices and admission contacts.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🛍️</div>
+        <h3>Shop Websites</h3>
+        <p>Display products, offers, business hours and customer enquiries.</p>
+      </article>
+      <article class="card">
+        <div class="icon">👨‍💻</div>
+        <h3>Portfolio Websites</h3>
+        <p>Show your skills, projects, experience and professional profile.</p>
+      </article>
+      <article class="card">
+        <div class="icon">📱</div>
+        <h3>Website Redesign</h3>
+        <p>Refresh an existing website with a cleaner design and improved mobile layout.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">Selected Work</span>
+      <h2>Our Portfolio</h2>
+      <p>Sample concepts showing the types of websites we can develop.</p>
+    </div>
+    <div class="grid">
+      <article class="card project">
+        <div class="project-top">🏥</div>
+        <div class="project-body">
+          <h3>Healthcare Website</h3>
+          <p>A concept for presenting hospital facilities and patient information.</p>
+          <span class="pill">Healthcare</span><span class="pill">Responsive</span>
+        </div>
+      </article>
+      <article class="card project">
+        <div class="project-top">🏫</div>
+        <div class="project-body">
+          <h3>Education Website</h3>
+          <p>A school website concept with courses, facilities and admission details.</p>
+          <span class="pill">Education</span><span class="pill">Modern UI</span>
+        </div>
+      </article>
+      <article class="card project">
+        <div class="project-top">🏢</div>
+        <div class="project-body">
+          <h3>Business Website</h3>
+          <p>A professional online presence for a local company or service provider.</p>
+          <span class="pill">Business</span><span class="pill">Contact</span>
+        </div>
+      </article>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-size:13px">
+      These are sample concepts, not claims of completed client projects.
+    </p>
+  </div>
+</section>
+
+<section id="pricing" style="background:#0b1426">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">Simple Packages</span>
+      <h2>Website Development Pricing</h2>
+      <p>Starting prices for demonstration. Final quotes depend on requirements.</p>
+    </div>
+    <div class="grid">
+      <article class="card price-card">
+        <h3>Basic</h3>
+        <p>For a simple online presence.</p>
+        <div class="price">₹8,599 <small>starting</small></div>
+        <ul>
+          <li>Simple landing page</li>
+          <li>Mobile-friendly layout</li>
+          <li>Business information</li>
+          <li>Contact links</li>
+        </ul>
+        <a class="btn btn-outline" href="#contact">Enquire Now</a>
+      </article>
+      <article class="card price-card featured">
+        <span class="tag">Popular Choice</span>
+        <h3 style="margin-top:12px">Business</h3>
+        <p>For growing businesses.</p>
+        <div class="price">₹ 14,999<small>starting</small></div>
+        <ul>
+          <li>Multiple content sections</li>
+          <li>Services and pricing</li>
+          <li>WhatsApp contact button</li>
+          <li>Responsive design</li>
+        </ul>
+        <a class="btn" href="#contact">Enquire Now</a>
+      </article>
+      <article class="card price-card">
+        <h3>Premium</h3>
+        <p>For more custom requirements.</p>
+        <div class="price">₹27,999 <small>starting</small></div>
+        <ul>
+          <li>Custom page layout</li>
+          <li>Portfolio or gallery</li>
+          <li>Additional sections</li>
+          <li>Launch assistance</li>
+        </ul>
+        <a class="btn btn-outline" href="#contact">Enquire Now</a>
+      </article>
+    </div>
+    <p style="font-size:13px;margin-top:20px">
+      Domain, hosting, paid tools and advanced features may cost extra.
+      These prices are examples, not a final quotation.
+    </p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">FAQs</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <details>
+      <summary>Will my website work on mobile phones?</summary>
+      <p>Yes. This template uses responsive CSS so the layout adjusts to smaller screens.</p>
+    </details>
+    <details>
+      <summary>Can customers contact me through WhatsApp?</summary>
+      <p>Yes. Replace the example WhatsApp number in the code with your own number.</p>
+    </details>
+    <details>
+      <summary>Will this website be live on the internet automatically?</summary>
+      <p>No. You must save the HTML file and publish it using a suitable hosting service.</p>
+    </details>
+    <details>
+      <summary>Can you make a website for my type of business?</summary>
+      <p>Contact us with your requirements to discuss the pages, design and features needed.</p>
+    </details>
+  </div>
+</section>
+
+<section id="contact" style="background:#0b1426">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">Let's Work Together</span>
+      <h2>Start Your Website Project</h2>
+      <p>Tell us a little about your business and the website you need.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-box">
+        <h3>Contact Information</h3>
+        <p>📱 WhatsApp: Replace with your number: 9138338918</p>
+        <p>✉️ Email: Replace with your email: ap9483319@gmail.com</p>
+        <p>🌍 Service: Business website development</p>
+        <p>Share your business type, required pages and budget to get started.</p>
+        <a class="btn" href="https://wa.me/9138338918?text=Hello%2C%20I%20need%20a%20business%20website" target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
+      </div>
+      <div class="contact-box">
+        <h3>Send a Project Enquiry</h3>
+        <form id="contactForm">
+          <label for="name">Your Name</label>
+          <input id="name" name="name" required placeholder="Enter your name">
+          <label for="business">Business Type</label>
+          <select id="business" name="business">
+            <option>Business Website</option>
+            <option>Hospital Website</option>
+            <option>School Website</option>
+            <option>Shop Website</option>
+            <option>Portfolio Website</option>
+            <option>Other</option>
+          </select>
+          <label for="message">Project Details</label>
+          <textarea id="message" name="message" required placeholder="Tell us what website you need"></textarea>
+          <button class="btn" type="submit">Send via WhatsApp ↗</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div>
+      <a class="brand" href="#home">ARJUN <span>WEB DEV.</span></a>
+      <p style="font-size:13px;margin-top:8px">Professional website solutions for businesses.</p>
+    </div>
+    <p style="font-size:13px">© 2026 Arjun Web Development. All rights reserved.</p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/9138338918?text=Hello%2C%20I%20need%20a%20website" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">WhatsApp ↗</a>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const name=document.getElementById("name").value.trim();
+  const business=document.getElementById("business").value;
+  const message=document.getElementById("message").value.trim();
+  const phone="9138338918";
+  if(!name || !message){
+    alert("Please enter your name and project details.");
+    return;
+  }
+  if(phone.includes("X")){
+    alert("Please replace 9138338918 in the HTML code with your WhatsApp number first.");
+    return;
+  }
+  const text="Hello, my name is "+name+
+    ". Website type: "+business+
+    ". Project details: "+message;
+  window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(text),"_blank");
+});
+</script>
+
+</body>
+  </html>
